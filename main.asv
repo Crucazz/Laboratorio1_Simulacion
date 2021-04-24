@@ -57,9 +57,7 @@ syms x
     y_c=2*exp(y_poli);
     
     figure()
-    semilogy(x,y_c,'b -');
-    figure()
-    plot(x,y_c,'b -')
+    semilogy(x,y_c,'b -b);
    
 %%PARTE 2
     %a) 
