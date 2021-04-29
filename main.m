@@ -62,6 +62,9 @@ syms x
     plot(x,y_c,'b -')
    
 %%PARTE 2
+    clc
+    clear
+    syms x
     %a) 
     %  x^3-x-1
     funcion = input('Ingresar funcion(x): ');
@@ -71,4 +74,11 @@ syms x
     iter_max=100;
 
     result = Newton_Raphson(funcion,iter_max,error,val);
+    
+    %b)
+    A = [1.77 -0.005 3.98 -2.95 0.34 0.19];
+    sd1=desviacionS(A)
+   
+    
+    
 

@@ -1,25 +1,21 @@
 function [raiz] = Newton_Raphson(funcion,iter_max,error,val)
     syms x
-    iter_max
     df = diff(funcion,x);
     derivada = inline(df);
     fun = inline(funcion);
-    %Se realiza la primera iteracion
+    %se realiza el calculo del nuevo valor de la raiz
     raiz = val - fun(val)/derivada(val);
+    %se comprobara si este valor es menor al error especificado
+    %o si las iteraciones maximas fueron superadas
     if (iter_max<=0 || abs(fun(val))<error)
+        %en caso de que se cumpla una de las dos opciones retornara
+        %el valor calculado terminando con la recursion
         raiz;
     else
+        %en caso contrario se iniciara una nueva instancia de la funcion
+        %con un nuevo valor de la raiz, asi como tambien con una iteracion
+        %menos disponible en su maximo.
         raiz = Newton_Raphson(funcion,iter_max-1,error,raiz);
     end
-    %Inicio del ciclo hasta conseguir la tolerancia deseada
-%     while abs(f(a)) > tol        
-%         m = a - f(a)/df(a);
-%         oper=oper+4;
-%         iter=iter+1;
-%         a = m;     
-%         x = [x,m];
-%         error = [error,abs(f(m))];
-%         oper=oper+2;
-%     end
 end
 
