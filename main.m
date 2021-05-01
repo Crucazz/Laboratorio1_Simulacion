@@ -1,11 +1,11 @@
 %Autores:
-%   -Gary Simken
+%   -Gary Simken       19.986.690-7
 %   -Felipe Villalobos 20.139.310-8
 clc
 clear
 syms x
 
-%%PARTE 1
+%%PARTE 1ASDASD
     
     %1.
     %definicion del logaritmo en base distinta de 10
